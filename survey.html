@@ -7,6 +7,7 @@
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
@@ -15,81 +16,202 @@
 
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4">Take the survey</h1>
+           
+            <h1 class="display-4 changeHeader"> <i class="fas fa-star-half-alt"></i> Take the survey</h1>
             <hr class="my-4">
-            <p class="lead">5 minutes could change your life</p>
+            <p class="lead changePara">5 minutes could change your life</p>
 
         </div>
     </div>
 
     <div class="container">
 
+        <div id="match"></div>
+        <div id="buttonPlace"></div>
 
 
-        <form>
+
+        <form id="hiding">
             <div class="form-group">
                 <label for="exampleFormControlInput1">What is your name?</label>
                 <input type="name" class="form-control" id="name" placeholder="John">
             </div>
             <div class="form-group">
-                    <label for="exampleFormControlInput1">Please post a link of your image</label>
-                    <input type="link" class="form-control" id="link" placeholder="!@#@!#$@@.jpg">
-                </div>
-           <div class="input-field">
-               <p>You are creative person, who always likes to learn about new things!</p>
+                <label for="exampleFormControlInput1">Please post a link of your image</label>
+                <input type="link" class="form-control" id="link" placeholder="!@#@!#$@@.jpg">
+            </div>
+            <div class="input-field">
+                <p>You are creative person, who always likes to learn about new things!</p>
 
-                <select id ="q1" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Choose...</option>
-                        <option value="1">1 (No, I'm not)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (oh yes I am) </option>
-                    </select>
-           </div>
+                <select id="q1" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">1 (No, I'm not)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (oh yes I am) </option>
+                </select>
+            </div>
 
-           <div class="input-field">
+            <div class="input-field">
                 <p>You are outdoor person, who always likes to participate in outdoor activities!</p>
- 
-                 <select id ="q2" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                         <option selected>Choose...</option>
-                         <option value="1">1 (No, I'm not)</option>
-                         <option value="2">2</option>
-                         <option value="3">3</option>
-                         <option value="4">4</option>
-                         <option value="5">5 (oh yes I am) </option>
-                     </select>
+
+                <select id="q2" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">1 (No, I'm not)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (oh yes I am) </option>
+                </select>
+            </div>
+
+
+            <div class="input-field">
+                <p>You an indoor person, who always likes to just chill at home!</p>
+
+                <select id="q3" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">1 (No, I'm not)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (oh yes I am) </option>
+                </select>
+            </div>
+
+
+            <div class="input-field">
+                <p>You are a family person! </p>
+
+                <select id="q4" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">1 (No, I'm not)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (oh yes I am) </option>
+                </select>
+            </div>
+
+            <div class="input-field">
+                <p>You like to travel!</p>
+
+                <select id="q5" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">1 (No, I'm not)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (oh yes I am) </option>
+                </select>
+            </div>
+
+            <div class="input-field">
+                <p>You like sports!</p>
+
+                <select id="q6" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">1 (No, I'm not)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (oh yes I am) </option>
+                </select>
             </div>
             <button type="submit" class="sendResults btn btn-primary">Submit</button>
-           
+
         </form>
     </div>
 
     <script type="text/javascript">
         // Question: What does this code do?
-        $(".sendResults").on("click", function(event) {
+        $(".sendResults").on("click", function (event) {
             console.log("working")
-          event.preventDefault();
-    
-          var newEntry = {
-            name: $("#name").val().trim(),
-            link: $("#link").val().trim(),
-            scores: [
-                $("#q1").val(),
-                $("#q2").val()
-            ]
-          };
-    
-          // Question: What does this code do??
-          $.post("/api/entry", newEntry)
-            .then(function(data) {
-              console.log(data);
-              alert("Adding entry...");
-            });
-    
+            event.preventDefault();
+
+            var newEntry = {
+                name: $("#name").val().trim(),
+                link: $("#link").val().trim(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val()
+                ]
+            };
+
+            $(".changeHeader").text("Congratulations!!")
+            $(".changePara").text("We have found you the perfect match!")
+            $("#hiding").css("display", "none")
+
+            var $button = $("<a>")
+            $button.addClass("btn btn-primary btn-lg")
+            $button.text("Return back to main page")
+            $button.attr("href", "/")
+
+            $("#buttonPlace").append($button)
+
+
+
+            // Question: What does this code do??
+            $.post("/api/entry", newEntry)
+                .then(function (data) {
+
+                    console.log(data);
+
+                    // Display card based on match from backend 
+
+                    for (var x = 0; x < data.length; x++) {
+
+                        var $div = $("<div>")
+                        $div.addClass("card")
+
+                        // card image header
+
+                        var $img = $("<img>")
+                        $img.attr("src", data[x].link)
+                        $img.css("width", "220px")
+                        $img.css("height", "340px")
+                        $img.addClass("card-img-top")
+
+                        $div.append($img)
+
+                        // card body
+
+                        var $div2 = $("<div>")
+                        $div2.addClass("card-body")
+
+                        var $message = $("<h5>")
+                        $message.addClass("card-title")
+                        $message.text("This is your match!!")
+
+                        $div2.append($message)
+
+                        // name of match
+
+                        var $name = $("<p>")
+                        $name.addClass("card-title")
+                        $name.text("Name: " + data[x].name)
+
+                        $div2.append($name)
+
+                        $div.append($div2)
+
+                        $("#match").append($div)
+
+                    }
+
+
+
+
+                });
+
         });
-    
-      </script>
+
+    </script>
 
 
 

@@ -16,19 +16,27 @@ app.use(express.json());
 // =============================================================
 var entry = [
     {
-        name:"Fady",
-        photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        name:"Leonardo",
+        link:"https://pixel.nymag.com/imgs/daily/vulture/2017/08/12/12-leonardo-dicaprio.w1200.h630.jpg",
         scores:[
             5,
-            1
+            1,
+            3,
+            4,
+            1,
+            2
           ]
       },
       {
-        name:"Dodo",
-        photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        name:"Brad",
+        link:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Brad_Pitt_Fury_2014.jpg/220px-Brad_Pitt_Fury_2014.jpg",
         scores:[
             3,
-            2
+            2,
+            3,
+            4,
+            5,
+            1
           ]
       }
       
@@ -78,13 +86,15 @@ app.post("/api/entry", function(req, res) {
     console.log(differences)
 
     var bestMatch = Math.min(...differences)
-    var matchIndex = 0
+   
+    var matchIndex = []
 
     console.log(bestMatch)
 
+
     for (var x = 0; x < differences.length; x++){
         if (bestMatch === differences[x]){
-            matchIndex = differences.indexOf(bestMatch)
+          matchIndex.push(x)
         }
     }
     
@@ -97,11 +107,20 @@ app.post("/api/entry", function(req, res) {
     console.log(newEntry);
   
 
-
-
     entry.push(newEntry);
+
+    var response = []
+
+
+    
+      for (var r = 0; r < matchIndex.length; r++){
+        response.push(entry[matchIndex[r]])
+      }
+      
+      res.json(response);
+
+    
   
-    res.json(entry[matchIndex]);
   });
 
 
